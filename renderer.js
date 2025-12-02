@@ -1,14 +1,10 @@
 // Mock Data
 const recentScreenshots = [
-    { title: "Notion", desc: "A imagem mostra uma página do Notion chamada 'Projeto FrameLog'...", img: "https://via.placeholder.com/300x160/e0e0e0/333333?text=Notion" },
-    { title: "Desktop UltraWide", desc: "Captura da área de trabalho completa com múltiplas janelas...", img: "https://via.placeholder.com/300x160/e0e0e0/333333?text=Desktop" },
-    { title: "VS Code", desc: "Editando arquivo main.js na linha 45...", img: "https://via.placeholder.com/300x160/e0e0e0/333333?text=VS+Code" }
+    { title: "Notion", desc: "A imagem mostra uma página do Notion chamada 'Projeto FrameLog'...", img: "https://via.placeholder.com/300x160/e0e0e0/333333?text=Notion" }
 ];
 
 const mostVisited = [
-    { title: "Arc Browser", desc: "Figma - Design System", img: "https://via.placeholder.com/300x160/e0e0e0/333333?text=Figma" },
-    { title: "Spotify", desc: "Playlist: Deep Focus", img: "https://via.placeholder.com/300x160/e0e0e0/333333?text=Spotify" },
-    { title: "Slack", desc: "Canal #geral", img: "https://via.placeholder.com/300x160/e0e0e0/333333?text=Slack" }
+    { title: "Arc Browser", desc: "Figma - Design System", img: "https://via.placeholder.com/300x160/e0e0e0/333333?text=Figma" }
 ];
 
 // DOM Elements
