@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrameLog</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="main-header">
+            <nav class="nav-links">
+                <button class="nav-btn active" data-tab="home">Home</button>
+                <button class="nav-btn" data-tab="historico">Histórico</button>
+                <button class="nav-btn" data-tab="configuracoes">Configurações</button>
+            </nav>
+            <div class="header-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Procurar">
+                    <span class="search-icon">🔍</span>
+                </div>
+                <button class="theme-toggle">☀️</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="content-area">
+            <!-- Home Tab -->
+            <section id="home" class="tab-content active">
+                <div class="section-block">
+                    <h2>Screenshots Recentes</h2>
+                    <div class="cards-grid" id="recent-screenshots">
+                        <!-- Cards injected by JS -->
+                    </div>
+                </div>
+
+                <div class="section-block">
+                    <h2>Mais Visitados</h2>
+                    <div class="cards-grid" id="most-visited">
+                        <!-- Cards injected by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Histórico Tab (Mock) -->
+            <section id="historico" class="tab-content">
+                <div class="placeholder-content">
+                    <h2>Histórico de Atividades</h2>
+                    <p>Visualização detalhada do histórico em breve.</p>
+                </div>
+            </section>
+
+            <!-- Configurações Tab (Mock) -->
+            <section id="configuracoes" class="tab-content">
+                <div class="settings-panel">
+                    <h2>Configurações</h2>
+                    <div class="setting-item">
+                        <label for="retention-setting">Dias para apagar itens antigos:</label>
+                        <select id="retention-setting">
+                            <option value="15">15 dias</option>
+                            <option value="30">30 dias</option>
+                            <option value="60">60 dias</option>
+                            <option value="90">90 dias</option>
+                            <option value="180">180 dias</option>
+                            <option value="-1">Nunca</option>
+                        </select>
+                        <button id="save-retention">Salvar</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="footer-item">
+                <span class="label">Espaço ocupado:</span>
+                <span class="value" id="storage-display">Calculando...</span>
+            </div>
+            <div class="footer-item">
+                <span class="label">Dias para apagar itens antigos:</span>
+                <span class="value" id="retention-display">-- dias</span>
+            </div>
+            <div class="footer-item">
+                <span class="label">Versão:</span>
+                <span class="value">0.01</span>
+                <span class="status-dot" id="backend-status" title="Backend: Desconectado">●</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+
+</html>

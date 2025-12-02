@@ -1,0 +1,33 @@
+{
+  "name": "framelog-interface",
+  "version": "1.0.0",
+  "description": "Interface for FrameLog application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:win:dir": "electron-builder --win --dir",
+    "build:linux": "electron-builder --linux"
+  },
+  "build": {
+    "appId": "com.framelog.interface",
+    "productName": "FrameLog Interface",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "keywords": [],
+  "author": "FrameLog Team",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^26.0.12"
+  }
+}
