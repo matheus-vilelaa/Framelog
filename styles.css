@@ -1,7 +1,23 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent !important;
+}
+
 :root {
     /* Dark Mode (Default) */
-    --bg-color: #1E1E1E;
-    --card-bg: #2D2D2D;
+    --bg-color: linear-gradient(135deg,
+            rgba(65, 65, 65, 0.603) 0%,
+            rgba(31, 31, 31, 0.205) 100%);
+    backdrop-filter: blur(10px);
+    stroke: 1px solid linear-gradient(135deg,
+            rgba(128, 128, 128, 0.103) 0%,
+            rgba(218, 218, 218, 0.205) 100%);
+    --card-bg: rgba(45, 45, 45, 0.9);
+    --header-footer-bg: rgb(39, 39, 39);
     --text-primary: #FFFFFF;
     --text-secondary: #AAAAAA;
     --accent-color: #FFD700;
@@ -13,8 +29,15 @@
 
 .light-mode {
     /* Light Mode Overrides */
-    --bg-color: #F5F5F7;
-    --card-bg: #FFFFFF;
+    --bg-color: linear-gradient(135deg,
+            rgba(245, 245, 247, 0.603) 0%,
+            rgba(245, 245, 247, 0.205) 100%);
+    backdrop-filter: blur(10px);
+    stroke: 1px solid linear-gradient(135deg,
+            rgb(218, 218, 218) 0%,
+            rgba(128, 128, 128, 0.404) 100%);
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --header-footer-bg: rgb(245, 245, 247);
     --text-primary: #333333;
     --text-secondary: #666666;
     --border-color: #E0E0E0;
@@ -26,9 +49,10 @@
     padding: 0;
 }
 
-body {
+.app-container {
     font-family: var(--font-family);
-    background-color: var(--bg-color);
+    background: var(--bg-color);
+    border-radius: 10px;
     color: var(--text-primary);
     height: 100vh;
     overflow: hidden;
@@ -43,16 +67,25 @@ body {
 /* Header */
 .main-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    /* Align everything at the center */
     align-items: center;
     padding: 1rem 2rem;
-    background-color: var(--card-bg);
+    margin: 0.3rem;
+    border-radius: 10px;
+    background: var(--header-footer-bg);
     border-bottom: 1px solid var(--border-color);
+    position: relative;
+    /* For absolute positioning of window controls */
+    -webkit-app-region: drag;
+    /* Drag region */
 }
 
 .nav-links {
     display: flex;
-    gap: 1rem;
+    gap: 81px;
+    /* 81px from each other */
+    -webkit-app-region: no-drag;
 }
 
 .nav-btn {
@@ -75,7 +108,11 @@ body {
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 110px;
+    /* Search bar 110px from theme toggle */
+    margin-left: 110px;
+    /* Search bar 110px from buttons */
+    -webkit-app-region: no-drag;
 }
 
 .search-bar {
@@ -104,6 +141,39 @@ body {
     border: none;
     font-size: 1.2rem;
     cursor: pointer;
+}
+
+/* Window Controls */
+.window-controls {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    -webkit-app-region: no-drag;
+}
+
+.win-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    width: 46px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.win-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+#close-btn:hover {
+    background-color: #e81123;
+    color: white;
 }
 
 /* Main Content */
@@ -225,9 +295,11 @@ body {
 
 /* Footer */
 .main-footer {
-    background-color: var(--card-bg);
+    background-color: var(--header-footer-bg);
     border-top: 1px solid var(--border-color);
     padding: 0.8rem 2rem;
+    margin: 0.3rem;
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
     font-size: 0.85rem;

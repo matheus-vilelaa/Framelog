@@ -1,10 +1,10 @@
 // Mock Data
 const recentScreenshots = [
-    { title: "Notion", desc: "A imagem mostra uma página do Notion chamada 'Projeto FrameLog'...", img: "https://via.placeholder.com/300x160/e0e0e0/333333?text=Notion" }
+    { title: "Notion", desc: "A imagem mostra uma página do Notion chamada 'Projeto FrameLog'...", img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.ru1L75o7VDbsP9ejEYOnvwHaEg%3Fpid%3DApi&f=1&ipt=f676bca4cb85907726a7d7ed7b1b541286dacf4c2f165f2871d09a99500518b3&ipo=images" }
 ];
 
 const mostVisited = [
-    { title: "Arc Browser", desc: "Figma - Design System", img: "https://via.placeholder.com/300x160/e0e0e0/333333?text=Figma" }
+    { title: "Arc Browser", desc: "Figma - Design System", img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%2Fid%2FOIP.AwI7pgj78kSUHtEXGvjQngHaEK%3Fpid%3DApi&f=1&ipt=ba191dcbee3797fdb3836a5f9f373e0a57429d1f60321e6e8500d8aeb7d27ba2&ipo=images" }
 ];
 
 // DOM Elements
@@ -126,6 +126,19 @@ themeToggleBtn.addEventListener('click', () => {
         themeToggleBtn.textContent = '☀️'; // Icon to switch TO Light Mode
         // localStorage.setItem('theme', 'dark');
     }
+});
+
+// Window Controls
+document.getElementById('min-btn').addEventListener('click', () => {
+    window.api.minimizeWindow();
+});
+
+document.getElementById('max-btn').addEventListener('click', () => {
+    window.api.maximizeWindow();
+});
+
+document.getElementById('close-btn').addEventListener('click', () => {
+    window.api.closeWindow();
 });
 
 // Initialize

@@ -10,6 +10,9 @@ function createWindow() {
     const mainWindow = new BrowserWindow({
         width: 1200,
         height: 800,
+        transparent: true,
+        backgroundColor: '#00000000',
+        frame: false, // Frameless window
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
             contextIsolation: true,
@@ -116,4 +119,26 @@ ipcMain.handle('get-backend-status', async () => {
     // In the future, this would check the connection to the C++ daemon.
     // For now, we'll simulate a connection check.
     return true; // Connected
+});
+
+// Window Controls
+ipcMain.on('window-minimize', () => {
+    const win = BrowserWindow.getFocusedWindow();
+    if (win) win.minimize();
+});
+
+ipcMain.on('window-maximize', () => {
+    const win = BrowserWindow.getFocusedWindow();
+    if (win) {
+        if (win.isMaximized()) {
+            win.unmaximize();
+        } else {
+            win.maximize();
+        }
+    }
+});
+
+ipcMain.on('window-close', () => {
+    const win = BrowserWindow.getFocusedWindow();
+    if (win) win.close();
 });
