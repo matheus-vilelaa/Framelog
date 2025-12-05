@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 
 // Configuration for the data path
-const DATA_PATH = path.join(__dirname, '../data');
+const DATA_PATH = path.join(__dirname, '../../data');
 const CONFIG_PATH = path.join(__dirname, 'config.json');
 
 function createWindow() {
@@ -21,7 +21,7 @@ function createWindow() {
         autoHideMenuBar: true // Clean look
     });
 
-    mainWindow.loadFile('index.html');
+    mainWindow.loadFile(path.join(__dirname, 'index.html'));
     // mainWindow.webContents.openDevTools(); // Uncomment for debugging
 }
 

@@ -2,7 +2,7 @@
   "name": "framelog-interface",
   "version": "1.0.0",
   "description": "Interface for FrameLog application",
-  "main": "main.js",
+  "main": "interface/main.js",
   "scripts": {
     "start": "electron .",
     "build": "electron-builder",

@@ -24,6 +24,7 @@
             <div class="header-actions">
                 <div class="search-bar">
                     <input type="text" placeholder="Procurar">
+                    <span class="search-icon">🔍</span>
                 </div>
                 <button class="theme-toggle">☀️</button>
             </div>
@@ -32,7 +33,21 @@
                 <button id="max-btn" class="win-btn">□</button>
                 <button id="close-btn" class="win-btn">×</button>
             </div>
+            <button id="menu-toggle" class="menu-toggle" style="display: none;">☰</button>
         </header>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-nav-links">
+                <button class="nav-btn active" data-tab="home">Home</button>
+                <button class="nav-btn" data-tab="historico">Histórico</button>
+                <button class="nav-btn" data-tab="configuracoes">Configurações</button>
+            </div>
+            <div class="mobile-search-bar">
+                <input type="text" placeholder="Procurar">
+                <span class="search-icon">🔍</span>
+            </div>
+        </div>
 
         <!-- Main Content -->
         <main class="content-area">

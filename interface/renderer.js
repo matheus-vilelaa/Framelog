@@ -141,6 +141,21 @@ document.getElementById('close-btn').addEventListener('click', () => {
     window.api.closeWindow();
 });
 
+// Mobile Menu Toggle
+const menuToggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+
+menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+});
+
+// Close mobile menu when a nav link is clicked
+document.querySelectorAll('.mobile-nav-links .nav-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+    });
+});
+
 // Initialize
 loadData();
 // Poll status every 30 seconds
